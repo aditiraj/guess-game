@@ -8,15 +8,35 @@
   </head>
   <body>
     <div id= "board">
+      <div id="image"></div>
       <table id="display">
         <tr>
            <td id="0"></td> <td id="1"></td> <td id="2"></td>
         </tr>
       </table>
-      <form>
+
+      <div id="chances">   
+       Lives left: 6
+      </div> 
+     <!-- removing this and adding keyboard>
+      <form id="input">
         <input type="text" id="guessInput">
         <input type="button" id="guess" value="Guess!">
       </form>
+      <-->
+
+      <div id="scoreboard">
+       Score: 100
+      </div>
+
+      <div id="keyboard">
+       <table id="alphabets">
+         <tr> <td class="key" id="A">A</td> <td class="key" id="B">B</td> <td class="key" id="C">C</td> <td class="key" id="D">D</td> <td class="key" id="E">E</td> <td class="key" id="F">F</td> <td class="key" id="G">G</td> <td class="key" id="H">H</td> <td class="key" id="I">I</td> </tr>
+         <tr> <td class="key" id="J">J</td> <td class="key" id="K">K</td> <td class="key" id="L">L</td> <td class="key" id="M">M</td> <td class="key" id="N">N</td> <td class="key" id="O">O</td> <td class="key" id="P">P</td> <td class="key" id="Q">Q</td> <td class="key" id="R">R</td> </tr>
+         <tr> <td class="key" id="S">S</td> <td class="key" id="T">T</td> <td class="key" id="U">U</td> <td class="key" id="V">V</td> <td class="key" id="W">W</td> <td class="key" id="X">X</td> <td class="key" id="Y">Y</td> <td class="key" id="Z">Z</td></tr>
+       </table>
+     </div>
+
     </div>
   </body>
 </html>
