@@ -6,20 +6,27 @@ var allGuesses=[];
 var lives=6;
 
 window.onload=function(){
-               var button= document.getElementById("guess");
-               button.onclick= processGuess;
-              };
+              // var button= document.getElementById("guess");
+              // button.onclick= processGuess;
+              var button= document.getElementsByClassName("key");
+              for(var i=0; i<button.length; i++)
+               {
+                 button[i].onclick= processGuess;
+               }
+            };
 
-function processGuess()
+function processGuess(e)
 {
- var guessInput= document.getElementById("guessInput");
- var guess= guessInput.value.toUpperCase();
+// var guessInput= document.getElementById("guessInput");
+// var guess= guessInput.value.toUpperCase();
+ var letter= e.target;
+ var guess= letter.id; 
  var enter= track(guess);
  if(enter)
  {
  guessLetter(guess);
  }
- guessInput.value="";
+// guessInput.value="";
 }
 
 function guessLetter(guess)
@@ -39,8 +46,10 @@ function guessLetter(guess)
        }
      }
 
- var numOfLives=displayReward(found);
- life(numOfLives,count);
+var numOfLives= displayReward(found);
+var livesleft= document.getElementById("chances");
+livesleft.innerHTML= "Lives left: " + numOfLives;
+life(numOfLives,count);
 }
 
 function display(id,guess)
@@ -51,18 +60,19 @@ cell.innerHTML= guess;
 
 function displayReward(found)
 {
+ var scoreboard= document.getElementById("scoreboard");
  if(found)
    { 
     score=score+(10*found);
     alert("You found a letter!");
-    alert("Your score: "+score);
+    scoreboard.innerHTML= "Score: " + score;
     return lives;
    }
   else
    {
     score=score-10;
     lives--;
-    alert("Your score: "+score);
+    scoreboard.innerHTML= "Score: " + score;
     return lives;
    }  
 }
@@ -82,7 +92,9 @@ function track(guess)
     return false;
   }
   return true;
-      } 
+      }
+  
+  
   }
 
 function life(numOfLives,count)
@@ -99,3 +111,4 @@ function life(numOfLives,count)
      }
   }
 }
+
