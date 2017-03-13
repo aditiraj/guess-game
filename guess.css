@@ -1,16 +1,88 @@
-table{
-margin-left:20px;
-margin-right:20px;  
-border: solid black thin; 
-}
-td{
-border:thin solid black;
-padding:20px;
-width:20px;
-height:20px;  
+body{
+font-family: Verdana, Helvetica, Arial, sans-serif;
+font:small;
+background-color:rgb(152, 207, 113);
 }
 
-form{
-margin-top: 20px; 
-} 
+#board{
+position:relative;
+height:1200px;
+width:1200px;
+}
+
+#image{
+position:absolute;
+height:315px;
+width:315px;
+margin-top:0px;
+margin-left:450px;
+background-image:url(guessword.png);
+background-repeat:no-repeat;
+}
+
+#display{
+position:absolute;
+margin-top:350px;
+margin-left:500px;
+border:thin solid black; 
+
+}
+
+td{
+border:thin solid black;
+padding:30px;
+width:5px;
+height:5px;
+}
+
+/*#input{
+position:absolute;
+margin-top:250px;
+margin-left:250px; 
+} */
+
+#chances{
+position:absolute;
+height:30px;
+width:150px;
+background:rgb(152, 207, 113);
+padding:5px;
+top:0px;
+right:20px;
+}
+
+#scoreboard{
+position:absolute;
+height:20px;
+width:100px;
+top:440px;
+margin-left:550px;
+}
+
+#keyboard{
+position:absolute;
+height:5px;
+width:5px;
+margin-left:250px;
+top:450px;
+}
+
+#alphabets{
+position:absolute;
+margin-top:140px;
+margin-right:20px;
+margin-left:20px;
+margin-bottom:220px;
+border:thin solid black; 
+}
+
+.key
+{
+background-color:#996699;
+}
+
+.key:nth-child(2n){
+background-color:pink;
+}
+
 
