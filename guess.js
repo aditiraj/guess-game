@@ -1,5 +1,6 @@
-var word=["Z","O","O"];
-var guessedLetter=["","",""];
+var allWords=["ZEBRA","FIX","DIAMOND","QUEEN","BUNGALOW","DEMONSTRATE"];
+var guessedLetter=[];
+var word;
 var count=0;
 var score=100;
 var allGuesses=[];
@@ -13,7 +14,22 @@ window.onload=function(){
                {
                  button[i].onclick= processGuess;
                }
+              generateWord();
             };
+
+function generateWord()
+{
+ var index= Math.floor(Math.random()*allWords.length);
+ word= allWords[index];
+ var row= document.getElementById("row");
+ for(var i=0; i< word.length; i++)
+  {
+   guessedLetter[i]="";
+   var td= document.createElement("td");
+   td.id= "" + i;
+   row.appendChild(td);
+  }
+}
 
 function processGuess(e)
 {
@@ -21,6 +37,7 @@ function processGuess(e)
 // var guess= guessInput.value.toUpperCase();
  var letter= e.target;
  var guess= letter.id; 
+ letter.setAttribute("class","clicked");
  var enter= track(guess);
  if(enter)
  {
@@ -36,7 +53,7 @@ function guessLetter(guess)
   
    for(var i=0; i<word.length; i++)
     {
-      if(guess == word[i])
+      if(guess == word.charAt(i))
        {
          guessedLetter[i]=guess;
           id= "" + i;
@@ -93,8 +110,6 @@ function track(guess)
   }
   return true;
       }
-  
-  
   }
 
 function life(numOfLives,count)
@@ -102,13 +117,14 @@ function life(numOfLives,count)
   if(numOfLives==0)
   {
    alert("Game Over!"); 
+   window.location.reload();
   }
  else
   {
     if(count==word.length) 
      {
       alert("Congratulations. You Won!");
+      window.location.reload();
      }
   }
 }
-
