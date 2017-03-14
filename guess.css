@@ -23,14 +23,14 @@ background-repeat:no-repeat;
 #display{
 position:absolute;
 margin-top:350px;
-margin-left:500px;
+margin-left:400px;
 border:thin solid black; 
 
 }
 
 td{
 border:thin solid black;
-padding:30px;
+padding:20px;
 width:5px;
 height:5px;
 }
@@ -63,8 +63,8 @@ margin-left:550px;
 position:absolute;
 height:5px;
 width:5px;
-margin-left:250px;
-top:450px;
+margin-left:400px;
+top:350px;
 }
 
 #alphabets{
@@ -76,6 +76,7 @@ margin-bottom:220px;
 border:thin solid black; 
 }
 
+
 .key
 {
 background-color:#996699;
@@ -85,4 +86,7 @@ background-color:#996699;
 background-color:pink;
 }
 
-
+.clicked
+{
+color:red;
+}
